@@ -1,0 +1,118 @@
+\documentclass[12pt,a4paper]{article}
+
+%%% Preamble %%%
+% Packages
+\usepackage[utf8]{inputenc} 
+\usepackage{amssymb}
+\usepackage{faktor} 
+\usepackage{fancyhdr}
+\usepackage{todonotes}
+\usepackage{amsmath}
+\usepackage{hyperref}
+%\usepackage[capitalize,nameinlink]{cleveref}
+\usepackage{amsthm}
+%\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+
+
+% Theorem Environments
+\theoremstyle{nicestyle}
+\newtheorem{theorem}{Theorem}[section]
+\providecommand*{\theoremautorefname}{Theorem}
+\newtheorem{exercise}[theorem]{Exercise}
+\providecommand*{\exerciseautorefname}{Exercise}
+\newtheorem{definition}[theorem]{Definition}
+\providecommand*{\definitionautorefname}{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\providecommand*{\lemmaautorefname}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\providecommand*{\propositionautorefname}{Propositon}
+\newtheorem{corollary}[theorem]{Corollary}
+\providecommand*{\corollaryautorefname}{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\providecommand*{\claimautorefname}{Claim}
+\newtheorem{subclaim}[theorem]{Subclaim}
+\providecommand*{\subclaimautorefname}{Subclaim}
+\newtheorem{convention}[theorem]{Convention}
+\providecommand*{\conventionautorefname}{Convention}
+\newtheorem{remark}[theorem]{Remark}
+\providecommand*{\remarkautorefname}{Remark}
+\newtheorem{fact}[theorem]{Fact}
+\providecommand*{\factautorefname}{Fact}
+\newtheorem{example}[theorem]{Example}
+\providecommand*{\exampleautorefname}{Example}
+\newtheorem{notation}[theorem]{Notation}
+\providecommand*{\notationautorefname}{Notation}
+\newtheorem{question}[theorem]{Question}
+\providecommand*{\questionautorefname}{Question}
+
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{claim*}{Claim} 
+\newtheorem*{subclaim*}{Subclaim}
+\newtheorem*{convention*}{Convention}
+
+% Proofblack
+\newenvironment{proofblack}{\begin{proof}}
+  {\renewcommand{\qedsymbol}{$\blacksquare$}\end{proof}}
+
+% Math Operators
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\col}{Col}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\rank}{rank} 
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\ord}{Ord}
+\DeclareMathOperator{\limit}{Lim} 
+\DeclareMathOperator{\zfc}{ZFC}
+\DeclareMathOperator{\zf}{ZF} 
+\DeclareMathOperator{\tc}{tc}
+\DeclareMathOperator{\rk}{rk} 
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\fn}{Fn}
+\DeclareMathOperator{\ult}{Ult}
+\DeclareMathOperator{\rS}{r \Sigma}
+\DeclareMathOperator{\crit}{crit}
+\DeclareMathOperator{\trcl}{trcl}
+\DeclareMathOperator{\lh}{lh}
+\DeclareMathOperator{\wfp}{wfp}
+\DeclareMathOperator{\hull}{Hull}
+\DeclareMathOperator{\otp}{otp}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\lex}{lex}
+\DeclareMathOperator{\length}{lh}
+\DeclareMathOperator{\gch}{GCH}
+\DeclareMathOperator{\rud}{rud}
+
+%%% End of Preamble %%%
+
+\begin{document}
+\begin{lemma}
+  Suppose $A \subseteq ^{\omega}\omega$ has a $\kappa$-semiscale. Then
+  $A$ is $\kappa$-Souslin.
+\end{lemma}
+
+\begin{proof}
+  Let $(\phi_n \mid n < \omega)$ be a $\kappa$-semiscale on $A$. Let
+  \[
+    T = \{ (x \restriction n, (\phi_0(x), \phi_1(x), \ldots,
+    \phi_{n-1}(x)) \mid x \in A \}.
+  \]
+  Clearly $T$ is a tree and $A \subseteq p[T]$. On the other hand, if
+  $x \in p[T]$, fix $f \colon \omega \to \kappa$ such that
+  $(x,f) \in T$. For each $n < \omega$ there is now some $a_n \in A$
+  of length $A$ such that
+  $(x\restriction n, f \restriction n) = (a_n \restriction n,
+  (\phi_0(a_n), \ldots, \phi_{n-1}(a_{n}))$. We have
+  $\lim_{n < \omega}a_n = x$. Furthermore, for all $m < n < l < \omega$,
+  \[
+   \phi_m(a_n) = \phi_m(a_l),
+ \]
+ i.e. $(\phi_m(a_n) \mid n < \omega)$ is eventually constant and thus
+ $x \in A$.
+\end{proof}
+\end{document}
